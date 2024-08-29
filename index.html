@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>
+        HTML Music Player
+    </title>
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div id="container">
+        <button class="custom-buttons" id="night-mode" onclick="themeToggle()" style="top: 5px;">
+            Dark Mode
+        </button>
+        <button class="custom-buttons" id="cBgButton" onclick="bgToggle()" style="top: 35px;">
+            Enable Backgrounds
+        </button>
+        <img id="background" style="display: none;">
+        <div id="music-player">
+            <audio id="song"></audio>
+
+            <img id="thumbnail">
+            <h1 id="title"></h1>
+            <h4 id="artist"></h4>
+
+            <input type="range" value="0" id="progress">
+            <div class="bonus-controls">
+                <div id="repeat-light"></div>
+                <div class="controls" class="buttons" onclick="repeat()" onmouseover="repOver()" onmouseout="repOut()" id="repeat">
+                    <img src="icons/repeat-dark.png" width="50%" id="rptImg">
+                </div>
+            </div>
+            <div class="controls">
+                <div class="buttons" onclick="previousSong()" onmouseover="prevOver()" onmouseout="prevOut()" id="backward">
+                    <img src="icons/backward-dark.png" width="40%" id="bcwImg">
+                </div>
+                <div class="buttons" onclick="playPause()" onmouseover="playOver()" onmouseout="playOut()" id="play">
+                    <img src="icons/play-dark.png" width="40%" id="ctrlIcon">
+                </div>
+                <div class="buttons" onclick="nextSong()" onmouseover="nextOver()" onmouseout="nextOut()" id="forward">
+                    <img src="icons/forward-dark.png" width="40%" id="frwImg">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
