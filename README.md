@@ -1,4 +1,4 @@
-# RMP
+# RMP - Random Music Player
 A personal music player that plays songs in a random order.
 
 **Note that this is my personal project that i am not planning to work on in the long term**
