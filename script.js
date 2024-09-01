@@ -5,8 +5,9 @@ let title = document.getElementById("title");
 let artist = document.getElementById("artist");
 let progress = document.getElementById("progress");
 let thumbnail = document.getElementById("thumbnail");
-let themeTog = 0;
 let background = document.getElementById("background");
+let buttons = document.getElementsByClassName("buttons");
+let themeTog = 1;
 
 let songs = [
     //1
@@ -59,6 +60,8 @@ let songs = [
     { src: "songs/You Want Me.mp3", artist:"Dirtyphonics", title: "You Want Me", img:"thumbnails/you want me.jpg" },
     //25
     { src: "songs/MURDER PLOT.mp3", artist:"KORDHELL", title: "MURDER PLOT", img:"thumbnails/murder plot.jpg" },
+    //26
+    { src: "songs/Rawthentic.mp3", artist:"Mr. Bill & Infected Mushroom", title: "Rawthentic", img:"thumbnails/rawthentic.jpg" },
 ];
 
 shuffleSongs(songs);
@@ -99,14 +102,15 @@ function playPause() {
         else{
             ctrlIcon.src = "icons/pause-light.png";
         }
-    } else {
+    }
+    else {
         song.pause();
         if(themeTog == 0){
-        ctrlIcon.src = "icons/play-dark.png";
-    }
-    else{
-        ctrlIcon.src = "icons/play-light.png";
-    }
+            ctrlIcon.src = "icons/play-dark.png";
+        }
+        else{
+            ctrlIcon.src = "icons/play-light.png";
+        }
     }
 }
 
@@ -223,8 +227,6 @@ navigator.mediaSession.setActionHandler('pause', function() {
 
 // Dark mode controls
 
-let buttons = document.getElementsByClassName("buttons");
-
 function themeToggle(){
     if(themeTog == 0){
         title.style.color = "white";
@@ -263,7 +265,7 @@ function themeToggle(){
         document.getElementById("rptImg").src = "icons/repeat-dark.png";
         document.getElementById("repeat").style.backgroundColor = "rgb(245, 245, 245)";
         document.getElementById("music-player").style.backgroundColor = "rgb(235, 235, 188)";
-        document.getElementById("music-player").style.border = "none";
+        document.getElementById("music-player").style.outline = "none";
         for (let i = 0; i < buttons.length; i++) {
             buttons[i].style.backgroundColor = "rgb(245, 245, 245)";
         }
@@ -351,7 +353,7 @@ function bgToggle(){
         background.style.display = "inline-block";
         document.getElementById("cBgButton").innerHTML = "Disable Backgrounds";
         if (themeTog == 1){
-            document.getElementById("music-player").style.border = "none";
+            document.getElementById("music-player").style.outline = "none";
         }
         bgToggler = 1;
     }
