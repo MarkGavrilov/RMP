@@ -74,7 +74,6 @@ function shuffleSongs(array){
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
     }
-    return array;
 }
 
 function loadSong(index) {
@@ -226,11 +225,11 @@ navigator.mediaSession.setActionHandler('pause', function() {
 });
 
 // Dark mode controls
+// Dark mode toggle variable is at the beggining
 
 function themeToggle(){
     if(themeTog == 0){
-        title.style.color = "white";
-        artist.style.color = "white";
+        document.body.style.color = "white";
         document.getElementById("bcwImg").src = "icons/backward-light.png";
         if(song.paused == 1){
             ctrlIcon.src = "icons/play-light.png";
@@ -252,8 +251,7 @@ function themeToggle(){
         themeTog = 1;
     }
     else{
-        title.style.color = "black";
-        artist.style.color = "black";
+        document.body.style.color = "black";
         document.getElementById("bcwImg").src = "icons/backward-dark.png";
         if(song.paused == 1){
             ctrlIcon.src = "icons/play-dark.png";
@@ -366,3 +364,28 @@ function bgToggle(){
         bgToggler = 0;
     }
 }
+
+// Settings menu controls
+
+let settings = document.getElementById("settings");
+let settingsToggler = 0;
+let settingsContainer = document.getElementById("settings-container");
+
+function settingsToggle(){
+    if (settingsToggler == 0){
+        settingsContainer.style.display = "flex";
+        settingsToggler = 1;
+    }
+    else{
+        settingsContainer.style.display = "none";
+        settingsToggler = 0;
+    }
+}
+
+// Hide the menu when clicking away
+
+document.addEventListener('click', function(e) {
+    if (e.target == document.getElementById("settings-container")) {
+        settingsToggle();
+    }
+});

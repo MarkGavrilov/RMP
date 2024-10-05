@@ -10,14 +10,11 @@
     </title>
     <script defer src="script.js"></script>
 </head>
-<body>
-    <div id="container">
-        <button class="custom-buttons" id="night-mode" onclick="themeToggle()" style="top: 5px;">
-            Light Mode
-        </button>
-        <button class="custom-buttons" id="cBgButton" onclick="bgToggle()" style="top: 35px;">
-            Enable Backgrounds
-        </button>
+<body id="body">
+    <div class="container">
+        <div class="custom-buttons" id="settings" onclick="settingsToggle()">
+            <img src="icons/settings.svg" width="30px">
+        </div>
         <img id="background" style="display: none;">
         <div id="music-player">
             <audio id="song"></audio>
@@ -43,6 +40,23 @@
                 <div class="buttons" onclick="nextSong()" onmouseover="nextOver()" onmouseout="nextOut()" id="forward">
                     <img src="icons/forward-light.png" width="40%" id="frwImg">
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="settings-container">
+        <div id="settings-menu">
+            <div style="display: flex; flex-flow: column wrap; align-items: flex-start;">
+                <button class="custom-buttons" id="night-mode" onclick="themeToggle()" style="top: 5px;">
+                    Light Mode
+                </button>
+                <button class="custom-buttons" id="cBgButton" onclick="bgToggle()"style="top: 35px;">
+                    Enable Backgrounds
+                </button>
+            </div>
+            <div style="display: flex; margin-left: auto;">
+                <a href="https://github.com/MarkGavrilov/RMP" target="_blank">
+                    <img src="icons/github-light.svg" alt="GitHub link" class="links" title="Github">
+                </a>
             </div>
         </div>
     </div>

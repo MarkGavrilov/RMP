@@ -9,12 +9,12 @@
 }
 body{
     overflow: hidden;
+    background: #333;
     color: white;
 }
-#container{
+.container{
     width: 100%;
     height: 100vh;
-    background-color: #333;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -22,7 +22,7 @@ body{
 }
 #background{
     filter: blur(25px);
-    width: 125%;
+    width: 110%;
     position: absolute;
     text-align: center;
     z-index: 0;
@@ -30,23 +30,55 @@ body{
     margin-left: auto;
     margin-right: auto;
 }
-.custom-buttons{
+#settings{
+    top: 5px;
+    height: 40px;
+    width: 40px;
+    border-radius: 3px;
+    background: #555;
     position: absolute;
     left: 5px;
-    background-color: #555;
+}
+#settings:hover{
+    background: #666;
+}
+#settings-menu{
+    display: flex;
+    border-radius: 5px;
+    background: #555;
+    z-index: 3;
+    height: 400px;
+    width: 300px;
+    align-items: start;
+    justify-content: space-between;
+    flex-flow: column wrap;
+    padding: 2px;
+}
+#settings-container{
+    display: none;
+    margin-top: -100vh;
+}
+.custom-buttons{
+    background: #444;
     color: white;
     padding: 5px;
     cursor: pointer;
     border-radius: 1px;
     z-index: 1;
+    margin: 5px;
 }
 .custom-buttons:hover{
-    background-color: #666;
+    background: #666;
+}
+.links{
+    width: 50px;
+    cursor: pointer;
+    margin: 5px;
 }
 #music-player{
     text-align: center;
     padding: 25px 35px;
-    background-color: #333;
+    background: #333;
     width: 465px;
     height: 600px;
     border-radius: 1%;
@@ -73,7 +105,7 @@ body{
     margin: 10px;
     width: 55px;
     height: 55px;
-    background-color: #111;
+    background: #111;
     justify-content: center;
     align-items: center;
     cursor: pointer;
@@ -89,7 +121,7 @@ body{
     border-radius: 50%;
     width: 30px;
     height: 30px;
-    background-color: #111;
+    background: #111;
     justify-content: center;
     align-items: center;
     cursor: pointer;
@@ -99,7 +131,7 @@ body{
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: red;
+    background: red;
     margin-right: 5px;
 }
 #progress{
@@ -116,7 +148,7 @@ body{
 #progress::-webkit-slider-thumb{
     -webkit-appearance: none;
     appearance: none;
-    background-color: rgb(230, 230, 230);
+    background: rgb(230, 230, 230);
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -124,7 +156,7 @@ body{
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 #progress::-webkit-slider-thumb:hover{
-    background-color: white;
+    background: white;
 }
 #progress::-moz-range-thumb {
     width: 20px;
@@ -141,5 +173,9 @@ body{
     .controls div{
         width: 45px;
         height: 45px;
+    }
+    #background{
+        height: 110vh;
+        width: 100%;
     }
 } 
