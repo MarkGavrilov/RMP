@@ -83,10 +83,10 @@ function loadSong(index) {
     artist.innerHTML = songs[index].artist;
     song.load();
     if(themeTog == 0){
-        ctrlIcon.src = "icons/play-dark.png";
+        ctrlIcon.src = "icons/play-dark.svg";
     }
     else{
-        ctrlIcon.src = "icons/play-light.png";
+        ctrlIcon.src = "icons/play-light.svg";
     }
     progress.value = 0;
     background.src = songs[index].img;
@@ -96,19 +96,19 @@ function playPause() {
     if (song.paused) {
         song.play();
         if(themeTog == 0){
-            ctrlIcon.src = "icons/pause-dark.png";
+            ctrlIcon.src = "icons/pause-dark.svg";
         }
         else{
-            ctrlIcon.src = "icons/pause-light.png";
+            ctrlIcon.src = "icons/pause-light.svg";
         }
     }
     else {
         song.pause();
         if(themeTog == 0){
-            ctrlIcon.src = "icons/play-dark.png";
+            ctrlIcon.src = "icons/play-dark.svg";
         }
         else{
-            ctrlIcon.src = "icons/play-light.png";
+            ctrlIcon.src = "icons/play-light.svg";
         }
     }
 }
@@ -190,19 +190,19 @@ song.onended = function() {
 
 song.onpause = function() {
     if(themeTog == 0){
-        ctrlIcon.src = "icons/play-dark.png";
+        ctrlIcon.src = "icons/play-dark.svg";
     }
     else{
-        ctrlIcon.src = "icons/play-light.png";
+        ctrlIcon.src = "icons/play-light.svg";
     }
 }
 
 song.onplay = function() {
     if(themeTog == 0){
-        ctrlIcon.src = "icons/pause-dark.png";
+        ctrlIcon.src = "icons/pause-dark.svg";
     }
     else{
-        ctrlIcon.src = "icons/pause-light.png";
+        ctrlIcon.src = "icons/pause-light.svg";
     }
 }
 
@@ -230,16 +230,16 @@ navigator.mediaSession.setActionHandler('pause', function() {
 function themeToggle(){
     if(themeTog == 0){
         document.body.style.color = "white";
-        document.getElementById("bcwImg").src = "icons/backward-light.png";
+        document.getElementById("bcwImg").src = "icons/backward-light.svg";
         if(song.paused == 1){
-            ctrlIcon.src = "icons/play-light.png";
+            ctrlIcon.src = "icons/play-light.svg";
         }
         else{
-            ctrlIcon.src = "icons/pause-light.png";
+            ctrlIcon.src = "icons/pause-light.svg";
         }
-        document.getElementById("frwImg").src = "icons/forward-light.png";
+        document.getElementById("frwImg").src = "icons/forward-light.svg";
         document.getElementById("repeat").style.backgroundColor = "#111";
-        document.getElementById("rptImg").src = "icons/repeat-light.png";
+        document.getElementById("rptImg").src = "icons/repeat-light.svg";
         document.getElementById("music-player").style.backgroundColor = "#333";
         if (bgToggler == 0){
             document.getElementById("music-player").style.outline = "gray solid 1px";
@@ -252,15 +252,15 @@ function themeToggle(){
     }
     else{
         document.body.style.color = "black";
-        document.getElementById("bcwImg").src = "icons/backward-dark.png";
+        document.getElementById("bcwImg").src = "icons/backward-dark.svg";
         if(song.paused == 1){
-            ctrlIcon.src = "icons/play-dark.png";
+            ctrlIcon.src = "icons/play-dark.svg";
         }
         else{
-            ctrlIcon.src = "icons/pause-dark.png";
+            ctrlIcon.src = "icons/pause-dark.svg";
         }
-        document.getElementById("frwImg").src = "icons/forward-dark.png";
-        document.getElementById("rptImg").src = "icons/repeat-dark.png";
+        document.getElementById("frwImg").src = "icons/forward-dark.svg";
+        document.getElementById("rptImg").src = "icons/repeat-dark.svg";
         document.getElementById("repeat").style.backgroundColor = "rgb(245, 245, 245)";
         document.getElementById("music-player").style.backgroundColor = "rgb(235, 235, 188)";
         document.getElementById("music-player").style.outline = "none";
